@@ -1,0 +1,52 @@
+COORDINATOR EXPORT SUMMARY
+==========================
+
+Export Date: $(date)
+Export Location: ~/coordinator-export/
+
+FILES EXPORTED:
+---------------
+
+agents/
+  ✓ autonomous_coordinator.py     (5000+ lines) - Main orchestrator
+  ✓ intrinsic_motivation.py       (1072 lines)  - 7-dimensional motivation
+  ✓ memory_agent.py                (1500+ lines) - Memory coordination
+  ✓ governance_agent.py            - Governance enforcement
+  ✓ runtime_governance.py          - Runtime validation
+  ✓ shared_types.py                - Type definitions
+
+reasoning/
+  ✓ bayesian_uncertainty.py        (600+ lines)  - Belief system with decay
+  ✓ hierarchical_abstraction.py    (1400+ lines) - 4-level abstraction
+
+integration/
+  ✓ universal_domain_master.py     (754 lines)   - 15-domain cross-domain reasoning
+
+documentation/
+  ✓ README.md                       (comprehensive architecture guide)
+
+RECENT INTEGRATIONS:
+--------------------
+✓ Universal Domain Master → Active Cognition wiring
+✓ get_skill_recommendations() implementation
+✓ Domain tagging throughout memory/abstraction pipeline
+✓ Governance feedback loop integration
+✓ Cross-domain insights in goal generation
+
+NEXT STEPS:
+-----------
+1. Review README.md for full architecture details
+2. Copy contents to your GitHub repo: https://github.com/dmnlabsdevteam/coordinator
+3. This is a snapshot - not continuously updated
+
+DEPENDENCIES NOT INCLUDED:
+--------------------------
+- MySQL databases (torinai_thinking_hot, torinai_memory_cold)
+- LLM service integration (unified_llm.py)
+- Neural bridge (neural_bridge.py)
+- Security controller
+- Task queue implementation
+- Tool system architecture
+
+This is a reference implementation for collaborative research.
+Sat Feb  7 12:17:28 EST 2026
