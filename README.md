@@ -56,7 +56,7 @@ The main orchestrator that runs continuous autonomous cycles:
 - Domain-aware task inference (maps to 15 Universal Domain types)
 - Governance feedback integration (queries META memory for blocked patterns)
 - Cross-domain insight generation during goal formation
-- Persistent task execution history in MySQL
+- Persistent task execution history in PostgreSQL
 
 **Recent Wiring**: Now queries Universal Domain Master during goal generation to provide domain competency profiles and cross-domain transfer opportunities.
 
@@ -98,7 +98,7 @@ score = (
 Unified memory coordination with persistent cognition:
 
 **Architecture**:
-- Hot/Cold tier MySQL storage (0-60 days hot, 60+ days cold)
+- Hot/Cold tier PostgreSQL storage (0-60 days hot, 60+ days cold)
 - Memory types: EPISODIC, SEMANTIC, PROCEDURAL, META
 - Continuous background loops (HealthMonitor pattern)
 
@@ -324,8 +324,8 @@ decayed_prior_adj = current * (1 - decay_factor * 0.5)
 ## 🔧 Technical Details
 
 ### Memory Architecture
-- **Hot Tier**: MySQL `torinai_thinking_hot` (0-60 days)
-- **Cold Tier**: MySQL `torinai_memory_cold` (60+ days)
+- **Hot Tier**: PostgreSQL `torinai_thinking_hot` (0-60 days)
+- **Cold Tier**: PostgreSQL `torinai_memory_cold` (60+ days)
 - **Migration**: Automatic via maintenance loop
 - **Decay**: Applied to importance scores: `importance * exp(-0.01 * age_days)`
 
@@ -484,25 +484,7 @@ Where λ is domain-adaptive: `λ = base_rate * (1 + domain_volatility)`
 
 ## 🎓 Usage Notes
 
-This is a **reference snapshot**, not a standalone system. Key dependencies:
-
-**Required External Systems**:
-- MySQL databases: `torinai_thinking_hot`, `torinai_memory_cold`
-- LLM service (unified_llm.py) - not included
-- Neural bridge (neural_bridge.py) - for cross-domain reasoning
-- Security controller - for governance validation
-
-**Configuration**:
-- Domain master uses SQLite: `data/universal_domain.db`
-- Memory agent uses MySQL with hot/cold tiers
-- Motivation system saves profile: `data/motivation_profile.json`
-
-**Not Included**:
-- Database schemas
-- LLM integration layer
-- Security/governance rule definitions
-- Tool system architecture
-- Task queue implementation
+This is a **reference snapshot**, not a standalone system. 
 
 ---
 
@@ -510,7 +492,7 @@ This is a **reference snapshot**, not a standalone system. Key dependencies:
 
 This is a **research snapshot** from TorinAI's autonomous cognition system, shared for collaborative research purposes.
 
-**Attribution**: Dominion Labs / TorinAI Project
+**Attribution**: Dominion Labs Inc / TorinAI Project
 
 **Note**: This code is provided as-is for architectural reference and research collaboration. It is not a complete, runnable system without the broader TorinAI infrastructure.
 
@@ -542,4 +524,3 @@ For questions about this architecture or collaboration opportunities:
 
 **Last Updated**: January 2025
 **Version**: Research Snapshot v1.0
-**Status**: Reference Implementation (Not Actively Maintained)
